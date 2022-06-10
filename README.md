@@ -24,7 +24,6 @@ People use GitHub to build some of the most advanced technologies in the world. 
 
 - **Who is this for**: New developers, new GitHub users, and students.
 - **What you'll learn**: We'll introduce repositories, branches, commits, and pull requests.
-- **What you'll build**: We'll make a short Markdown file you can use as your [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
 - **Prerequisites**: None. This course is a great introduction for your first day on GitHub.
 - **How long**: This course is four steps long and takes less than one hour to complete.
 
@@ -63,8 +62,6 @@ _Welcome to "Introduction to GitHub"! :wave:_
 
 On additional branches, you can make edits without impacting the `main` version. Branches allow you to separate your work from the `main` branch. In other words, everyone's work is safe while you contribute.
 <br>:tv: [Video: Branches](https://www.youtube.com/watch?v=xgQmu81G1yY)
-
-**What is a profile README?**: A [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) is essentially an "About me" section on your GitHub profile where you can share information about yourself with the community on GitHub.com. GitHub shows your profile README at the top of your profile page.
 
 ### :keyboard: Activity: Your first branch
 
@@ -212,7 +209,6 @@ Here's a recap of your accomplishments:
   2. Create a file named `README.md` in it's root. The "root" means not inside any folder in your repository.
   3. Edit the contents of the `README.md` file.
   4. If you created a new branch for your file, open and merge a pull request on your branch.
-  5. We'd love to see your new profile! Share your profile on social media and tag us!
   6. Lastly, we'd love to hear what you thought of this course [in our discussion board](https://github.com/skills/.github/discussions).
 
 Check out these resources to learn more or get involved:
