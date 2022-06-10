@@ -106,7 +106,7 @@ The following steps will guide you through the process of committing a change on
 ```md
 # Hello, World!
 ```
-3. Save your file and go back to the command line. If you do `git status`, it should say that your files are `Untracked files` So we need to track them! Just do `git add README.md`. Lets quickly define some terms that you may see when doing `git status`.
+3. Save your file and go back to the command line. If you do `git status`, it should say that your files are `Not Staged` So we need to track them! Just do `git add README.md`. Lets quickly define some terms that you may see when doing `git status`.
     - **Untracked**: an untracked file is a file that git is not watching for changes on.
     - **Modifed**: a modifed file is a file that is being tracked, but the changes are not yet staged.
     - **Staged**: a staged file is one that is about to be commited.
