@@ -75,7 +75,10 @@ When working on a project, branches are extremely important for maintaining your
 3. Create a new branch! But first, there are a few things to learn about what to actually name it.
     - The name of your branch should be either `fix/` or `feature` followed by a name that describes what your branch will do. 
     - On `EGRC` specifcally, you will be using kebab case. 
-4. Move on to Step 2!
+4. `git switch -c {branch-name}`
+    - `switch` switches to a different branch
+    - `-c` flag creates a new branch
+5. Move on to Step 2!
  
 </details>
 
