@@ -68,15 +68,15 @@ On additional branches, you can make edits without impacting the `main` version.
 
 ### :keyboard: Activity: Your first branch
 
-1. Open a new browser tab, and navigate to this same repository. Then, work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to the **Code** tab.
-3. Click on the **main** branch drop-down.<br>
-   <img alt="image showing my-first-branch entry" src="/images/my-first-branch.png"/>
-4. In the field, enter a name for your branch: `my-first-branch`.
-5. Click **Create branch: my-first-branch** to create your branch.
-6. Move on to Step 2!<br>
-   **Note**: If you made a public repository, and want to confirm you correctly set up your first branch, wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically close this step and open the next one.
-
+When working on a project, branches are extremely important for maintaining your own version of history. You will almost never work on `release` or `develop` directly.
+  
+1. Open up your terminal, and clone this repository. <br> `gh repo clone {name of repo}`
+2. Then go into your newly created directory <br> `cd {name of repo}`
+3. Create a new branch! But first, there are a few things to learn about what to actually name it.
+    - The name of your branch should be either `fix/` or `feature` followed by a name that describes what your branch will do. 
+    - On `EGRC` specifcally, you will be using kebab case. 
+4. Move on to Step 2!
+ 
 </details>
 
 <!-- 
@@ -96,24 +96,26 @@ Creating a branch allows you to edit to your project without changing the `main`
 
 ### :keyboard: Activity: Your first commit
 
-The following steps will guide you through the process of committing a change on GitHub. Committing a change requires first adding a new file to your new branch. 
+The following steps will guide you through the process of committing a change on Git. Committing a change requires first adding a new file to your new branch. 
 
-1. On the **Code** tab, make sure you're on your new branch `my-first-branch`.
-2. Select the **Add file** drop-down and click **Create new file**.<br>
-   ![create new file option](/images/create-new-file.png)
-3. In the **Name your file...** field, enter `PROFILE.md`.
-4. In the **Edit new file** area, copy the following content to your file:
-   ```
-   Welcome to my GitHub profile!
-   ```
-   <img alt="profile.md file screenshot" src="/images/my-profile-file.png"/>
-5. For commits, you can enter a short commit message that describes what you changes you made. This helps others know what's included in your commit. GitHub offers a simple default message, but let's change it slightly for practice. Enter `Adding PROFILE.md` in the first text-entry field below **Commit new file**. Then, if you want to confirm what your screen should look like, expand the dropdown below.
-   <details>
-   <summary> Expand to see the screenshot.</summary>
-   <img alt="screenshot of adding a new file with a commit message" src="/images/commit-full-screen.png" />
-   </details>
-6. In this lesson, we'll ignore the other fields and click **Commit new file**.
-7. Move on to Step 3! <br>
+1. On your new branch create a file using your favorite text editor! It can really be anything, but lets make a `README.md` file. <br> `vim README.md`
+2. Make some changes to your file.
+```md
+# Hello, World!
+```
+3. Save your file and go back to the command line. If you do `git status`, it should say that your files are `Untracked files` So we need to track them! Just do `git add README.md`. Lets quickly define some terms that you may see when doing `git status`.
+    - **Untracked**: an untracked file is a file that git is not watching for changes on.
+    - **Modifed**: a modifed file is a file that is being tracked, but the changes are not yet staged.
+    - **Staged**: a staged file is one that is about to be commited.
+    - **Commited**: once a file is commited, it is added to the project's history.
+4. Time to commit your changes! Do `git commit` and you will be brought to a text editor. 
+5. Now comes the most important part, the commit message. There is a ton of documentation on what makes a good commit message, like [here](https://blog.indrek.io/articles/how-to-write-a-good-commit-message/), but we will quickly go over some key ideas.
+    - A good commit message documents not only **what** has been changed but the **why** and **how**.
+    - Keep the first line to say what your commit does using the imperative mood. Like `add README` or `Handle errors in bar function`. The first line should be < 50 characters long. 
+    - The next lines should describe why you made this commit and a bit of explanation on that change. This can be a few senteces to a few paragraphs long. Make sure to keep your lines < 72 and to use lines between paragraphs. We do not really need to put much, if anything, for this commit but it is helpful to know.
+5. Save your changes and exit the commit dialog. 
+6. Push your changes to your remote branch. `git push origin {your-branch-name}`.  
+7. Move on to Step 3!
    **Note**: Like before, you can wait about 20 seconds, then refresh this page (the one you're following instructions from) and [GitHub Actions](https://docs.github.com/en/actions) will automatically close this step and open the next one.
 
 </details>
@@ -138,23 +140,13 @@ Now that you’ve created a commit, it’s time to share your proposed change th
 
 ### :keyboard: Activity: Create a pull request
 
-You may have noticed after your commit that a message displayed indicating your recent push to your branch and providing a button that says **Compare & pull request**.
-
-![screenshot of message and button](/images/compare-and-pull-request.png)
-
- If you want, feel free to click **Compare & pull request**, and then skip to step 6 below. If you don't click the button, the instructions below walk you through manually setting up the pull request.
-
-1. Click on the **Pull requests** tab in your repository.
-2. Click **New pull request**.
-3. In the **base:** dropdown, make sure **main** is selected.
-4. Select the **compare:** dropdown, and click `my-first-branch`. <br>
-   <img alt="screenshot showing both branch selections" src="/images/pull-request-branches.png"/>
-5. Click **Create pull request**.
-6. Enter a title for your pull request: `Add my first file`.
-7. The next field helps you provide a description of the changes you made. Feel free to add a description of what you’ve accomplished so far. As a reminder, you have: created a branch, created a file and made a commit! <br>
-   <img alt="screenshot showing pull request" src="/images/Pull-request-description.png"/>
-8. Click **Create pull request**.
-9. Move on to Step 4! <br>
+There are a few ways to go about creating a pull request, but we will be using GitHub CLi. Like your commit, carefully creating a title and body is an important part of creating a pr. Since this is a very small tutorial, we will keep it simple here.
+  
+1. In your terminal, do `gh pr create`.
+2. You should be prompted to create a title `? Title`. Write down a descriptive title and hit `enter`.
+3. Then you will prompted to create a body description `? Body`. Write down a description of your pr. If it addresses a specific issue, make sure to mention that in your description. Something like `Closes #10`. Hit `enter`.
+4. You should get a link to your newly created pr! 
+5. Move on to Step 4! <br>
    **Note**: Like before, you can wait about 20 seconds, then refresh this page (the one you're following instructions from) and [GitHub Actions](https://docs.github.com/en/actions) will automatically close this step and open the next one. As a perk, you may see evidence of GitHub Actions running on the tab with the pull request opened! The image below shows a line you might see on your pull request after the Action finishes running.<br>
    <img alt="screenshot of an example of an actions line" src="/images/Actions-to-step-4.png"/>
 
